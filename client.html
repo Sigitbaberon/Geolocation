@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Client Location</title>
+  <script>
+    function sendLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    function showPosition(position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+
+      // Send the location data to the website pengguna
+      var message = {
+        latitude: latitude,
+        longitude: longitude
+      };
+      window.parent.postMessage(message, "*");
+    }
+  </script>
+</head>
+<body onload="sendLocation()">
+  <h1>Client Location</h1>
+  <p>Thank you for opening the link. Your location will be sent automatically.</p>
+</body>
+</html>
