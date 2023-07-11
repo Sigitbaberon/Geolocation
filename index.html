@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Share Location</title>
+  <script>
+    function generateLink() {
+      var shareableLink = "https://your-website.com/client.html";
+
+      // Display the shareable link
+      document.getElementById("shareableLink").value = shareableLink;
+    }
+  </script>
+</head>
+<body>
+  <h1>Share Location</h1>
+  <p>Click the button to generate the shareable link:</p>
+  <button onclick="generateLink()">Generate Link</button>
+  <p>Shareable Link:</p>
+  <input type="text" id="shareableLink" readonly>
+</body>
+</html>
